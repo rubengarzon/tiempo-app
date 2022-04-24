@@ -15,6 +15,7 @@ import { AppComponent } from './app.component';
     HttpClientModule,
     SearchModule,
     WeatherModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

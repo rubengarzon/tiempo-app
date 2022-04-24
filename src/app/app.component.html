@@ -1,9 +1,7 @@
 <nav class="nav">
-  <div class="nav__menu">
-    <a [routerLink]="['/']">Tiempo APP</a>
-  </div>
+  <a class="brand" [routerLink]="['/']">Tiempo APP</a>
 </nav>
-<div class="container">
-  <app-search></app-search>
-  <app-weather></app-weather>
+<div class="container mx-auto">
+  <app-search (submitted)="onSearch($event)"></app-search>
+  <app-weather *ngIf="weather$ | async as weather" [weather]="weather"></app-weather>
 </div>
