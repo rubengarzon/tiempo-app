@@ -2,7 +2,7 @@ import { environment } from '@env/environment';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { WeatherData } from '@app/shared/interfaces/weather.interfaces';
+import { Coord, WeatherData } from '@app/shared/interfaces/weather.interfaces';
 
 @Injectable({ providedIn: 'root' })
 export class WeatherService {
@@ -15,5 +15,12 @@ export class WeatherService {
     return this.http.get<WeatherData>(`${this.API_URL}/weather`, {
       params,
     });
+  }
+
+  public getWeatherByCoords(coord: Coord): Observable<WeatherData> {
+    const params = new HttpParams()
+      .set('lat', coord.latitude)
+      .set('lon', coord.longitude);
+    return this.http.get<WeatherData>(`${this.API_URL}/weather`, { params });
   }
 }
