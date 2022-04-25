@@ -1,6 +1,14 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { debounceTime, distinctUntilChanged, filter, map, tap } from 'rxjs';
+import {
+  debounceTime,
+  distinctUntilChanged,
+  filter,
+  iif,
+  map,
+  mergeMap,
+  tap,
+} from 'rxjs';
 
 @Component({
   selector: 'app-search',
@@ -31,7 +39,9 @@ export class SearchComponent implements OnInit {
         debounceTime(850),
         distinctUntilChanged(),
         filter((search: string) => search !== ''),
-        tap((search: string) => this.submitted.emit(search))
+        tap((search: string) => this.submitted.emit(search)),
+        filter((search: string) => search == 'cordoba'),
+        tap((search: string) => this.submitted.emit('cordoba,es'))
       )
       .subscribe();
   }

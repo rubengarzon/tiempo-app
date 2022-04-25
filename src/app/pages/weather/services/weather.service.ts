@@ -11,14 +11,9 @@ export class WeatherService {
   constructor(private readonly http: HttpClient) {}
 
   public getWeatherByName(city: string): Observable<WeatherData> {
-    const params = new HttpParams()
-      .set('q', city)
-      .set('units', 'metric')
-      .set('appid', environment.openWeather.key)
-      .set('lang', 'es');
+    const params = new HttpParams().set('q', city);
     return this.http.get<WeatherData>(`${this.API_URL}/weather`, {
       params,
     });
   }
-  //public getWeatherByCoords(): Observable<WeatherData> {}
 }
