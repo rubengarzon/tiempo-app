@@ -9,25 +9,6 @@ Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-
 - `$ git clone https://github.com/rubengarzon/tiempo-app`
 - `$ cd tiempo-app/`
 - `$ npm install`
-
-la carpeta environments no está en el repositorio porque contiene datos sensibles.
-
-Recuerda crear la carpeta environments y sus archivos correspondientes.
-environments
-      -environment.prod.ts
-      -environment.ts
-
-Los archivos quedarían configurados así:
-
- export const environment = {
-  production: false,
-  openWeather: {
-    key: 'XXXXXXXXX',
-    url: 'https://api.openweathermap.org/data/2.5/',
-  },
-};
-
-
 - `$ ng serve`
 
 ## Development server
