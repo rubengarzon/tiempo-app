@@ -5,9 +5,14 @@
   <div class="card__main">
     {{weather.weather[0].description}}
   </div>
-  <div class="card__city">
+  <div class="card__city" *ngIf="weather.name !== 'Cordova' else cordoba">
     {{weather.name}} , {{weather.sys.country}} / {{weather.main.temp | number: '1.0-0'}}&#8451;
   </div>
+  <ng-template #cordoba>
+    <div class="card__city">
+      Córdoba , {{weather.sys.country}} / {{weather.main.temp | number: '1.0-0'}}&#8451;
+    </div>
+  </ng-template>
   <div class="card__stats">
     <div class="card__stat width-33">
       <div class="card__stat--stat">
