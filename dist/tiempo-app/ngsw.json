@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1651082992479,
+  "timestamp": 1651084369901,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/favicon.ico",
         "/index.html",
-        "/main.c4fc2e725a603127.js",
+        "/main.541c8147fff2a420.js",
         "/manifest.webmanifest",
         "/polyfills.cc2ae0e9d751fd21.js",
         "/runtime.798d651d2b54b35c.js",
@@ -46,7 +46,7 @@
     {
       "name": "weather",
       "patterns": [
-        "https:\\/\\/api\\.openweathermap\\.org\\/data\\/2\\.5\\/.*"
+        "https:\\/\\/api\\.openweathermap\\.org\\/.*"
       ],
       "strategy": "freshness",
       "maxSize": 100,
@@ -69,8 +69,8 @@
     "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/assets/images/cordoba.jpg": "c4ad2b5256e13bf17ecab3971b855d5d71279fd4",
     "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/index.html": "6e6b65ccd953e34fe29485ce2597bce98fef9975",
-    "/main.c4fc2e725a603127.js": "58b7e32744bc02c5ae31fa6fbcdcd4f5eccdc410",
+    "/index.html": "66433cd6b578e4d7789c424ed706d6b5a12847a2",
+    "/main.541c8147fff2a420.js": "84ae49be0be76981a6e42f9f9abdc088bc6d8111",
     "/manifest.webmanifest": "a7b9306170ec6e2dcb377979ec5cadab94c52e43",
     "/polyfills.cc2ae0e9d751fd21.js": "7c87ea96c45e098665bb1d5cb5f6e694918d927e",
     "/runtime.798d651d2b54b35c.js": "cb6459da4d99b0036037b53cf27bf4db2ea7cdee",
