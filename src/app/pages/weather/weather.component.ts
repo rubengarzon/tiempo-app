@@ -14,5 +14,5 @@ import {
 })
 export class WeatherComponent {
   @Input() public weather!: WeatherData;
-  public BASE_URL = 'http://openweathermap.org/img/wn/';
+  public BASE_URL = 'http://openweathermap.org/img/wn';
 }
