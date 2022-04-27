@@ -31,12 +31,12 @@
     {
       "name": "weather",
       "urls": [
-        "https://api.openweathermap.org/data/2.5/**"
+        "https://api.openweathermap.org/**"
       ],
       "cacheConfig": {
         "strategy": "freshness",
-        "maxAge": "3d",
         "maxSize": 100,
+        "maxAge": "3d",
         "timeout": "10s"
       }
     }
