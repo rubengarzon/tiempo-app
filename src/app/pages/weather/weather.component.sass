@@ -1,5 +1,4 @@
 @import 'variables'
-
 .card
   background-color: $white
   margin-top: 2rem
@@ -7,52 +6,62 @@
   box-shadow: -0.063rem 1rem 1.875rem -1rem $black
   &__image
     position: relative
-    height: 15rem
+    height: 22rem
     margin-bottom: 2.188rem
     border-top-left-radius: $border-radius-size
     border-top-right-radius: $border-radius-size
-    background: url('/assets/images/cordoba.jpg')
-    background-position: right
-    img
-      position: absolute
-      top: -1.5rem
-      right: -1.5rem
-  &__main
-    text-transform: uppercase
-    font-size: 1rem
-    font-weight: 700
-    color: $main-color
-    padding: 0 1rem
-  &__city
-    font-size: 2rem
-    color: $black
-    font-weight: 900
-    padding: 1rem
-  &__stats
-    background-color: $main-color
-    color: $white
-    font-weight: 700
-    border-bottom-left-radius: $border-radius-size
-    border-bottom-right-radius: $border-radius-size
+    background: url('/assets/images/paisaje.jpg')
+    background-position: left
+    .nombre__localizacion
+      display: flex
+      margin-left: 1em
+      h2
+        color: black
+        margin-left: 5px
+        text-shadow: 1px 1px 1px white
+        font-size: 15px
+    &--container
+      width: 100%
+      height: 100%
+      display: flex
+      flex-direction: column
+      h4
+        font-size: 13px
+        color: black
+        align-self: center
+        text-shadow: 1px 1px 1px white
+        place-content: center
+        margin-bottom: 0
+      .card__image--temp
+        font-size: 140px
+        color: black
+        text-shadow: 1px 1px 1px white
+        align-self: center
+        margin-top: 0
+  .card__bloque
     display: flex
-    justify-content: space-evenly
-    .card__stat
-      padding: 1.25rem 1rem
-      text-align: center
-      border-right: 0.063rem solid $black
-      .card__stat--stat
-        position: relative
-        font-size: 1.5rem
-        margin-bottom: 0.625rem
-        sup
-          position: absolute
-          bottom: 0.25rem
-          font-size: 45%
-          margin-left: 0.125rem
-      .card__stat--name
-        text-transform: uppercase
-        font-weight: 400
-        font-size: 0.75rem
-        color: $black
+    .card__stats
+      margin-right: 12%
+      background-color: white
+      color: black
+      font-weight: 700
+      border-bottom-left-radius: $border-radius-size
+      border-bottom-right-radius: $border-radius-size
+      display: flex
+      justify-content: space-evenly
+      @media ( max-width: 500px)
+        margin-right: 21px
+      .card__stat
+        padding: 1.25rem 1rem
+        text-align: center
+        .card__stat--stat
+          display: flex
+          flex-direction: column
+          position: relative
+          font-size: 1.5rem
+          margin-bottom: 0.625rem
+          align-items: center
+          .hora
+            font-size: 15px
 .no-border
   border-right: none

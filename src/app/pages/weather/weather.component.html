@@ -1,41 +1,69 @@
-<div class="card">
-  <div class="card__image">
-    <img src="{{BASE_URL}}/{{weather.weather[0].icon}}@2x.png">
-  </div>
-  <div class="card__main">
-    {{weather.weather[0].description}}
-  </div>
-  <div class="card__city" *ngIf="weather.name !== 'Cordova' else cordoba">
-    {{weather.name}} , {{weather.sys.country}} / {{weather.main.temp | number: '1.0-0'}}&#8451;
-  </div>
-  <ng-template #cordoba>
-    <div class="card__city">
-      Córdoba , {{weather.sys.country}} / {{weather.main.temp | number: '1.0-0'}}&#8451;
-    </div>
-  </ng-template>
-  <div class="card__stats">
-    <div class="card__stat width-33">
-      <div class="card__stat--stat">
-        {{weather.main.pressure}} <sup>hPa</sup>
+<div class="mainn">
+  <div class="card">
+    <div class="card__image">
+      <!-- <img class="card__image--icon" src="{{BASE_URL}}/{{weather.weather[0].icon}}@2x.png"> -->
+      <div class="nombre__localizacion">
+        <i class="fa-solid fa-location-dot" style="align-self: center;font-size: 10px;"></i>
+        <div *ngIf="weather.name === 'Cordova'">
+          <h2>Córdoba</h2>
+        </div>
+        <div *ngIf="weather.name !== 'Cordova'">
+          <h2>{{weather.name}}</h2>
+        </div>
       </div>
-      <div class="card__stat--name">
-        Presión
+      <div class="card__image--container">
+        <h4>{{weather.weather[0].description | uppercase}}</h4>
+        <h2 class="card__image--temp">{{weather.main.temp | number: '1.0-0'}}°</h2>
       </div>
     </div>
-    <div class="card__stat width-33">
-      <div class="card__stat--stat">
-        {{weather.main.humidity}} <sup>%</sup>
-      </div>
-      <div class="card__stat--name">
-        Humedad
-      </div>
+    <div class="card__main">
     </div>
-    <div class="card__stat width-33 no-border">
-      <div class="card__stat--stat">
-        {{weather.wind.speed}} <sup>m/s</sup>
-      </div>
-      <div class="card__stat--name">
-        Velocidad del viento
+    <div class="card__bloque">
+
+
+      <div class="card__stats" *ngFor="let item of forecast.list;let indice=index">
+        <div class="card__stat width-33" *ngIf="item.dt_txt > fechaActual && indice < 5">
+          <div class="card__stat--stat">
+            <div *ngIf="item.weather[0].icon === '02n'">
+              <i class="fa-solid fa-cloud-moon"></i>
+            </div>
+            <div *ngIf="item.weather[0].icon === '02d'">
+              <i class="fa-solid fa-cloud-sun"></i>
+            </div>
+            <div *ngIf="item.weather[0].icon === '03d'">
+              <i class="fa-solid fa-cloud"></i>
+            </div>
+            <div *ngIf="item.weather[0].icon === '03n'">
+              <i class="fa-solid fa-cloud"></i>
+            </div>
+            <div *ngIf="item.weather[0].icon === '01d'">
+              <i class="fa-solid fa-sun"></i>
+            </div>
+            <div *ngIf="item.weather[0].icon === '04d'">
+              <i class="fa-solid fa-cloud"></i>
+            </div>
+            <div *ngIf="item.weather[0].icon === '04n'">
+              <i class="fa-solid fa-cloud"></i>
+            </div>
+            <div *ngIf="item.weather[0].icon === '01n'">
+              <i class="fa-solid fa-moon"></i>
+            </div>
+            <div *ngIf="item.weather[0].icon === '11d'">
+              <i class="fa-solid fa-cloud-bolt"></i>
+            </div>
+            <div *ngIf="item.weather[0].icon === '13d'">
+              <i class="fa-solid fa-snowflake"></i>
+            </div>
+            <div *ngIf="item.weather[0].icon === '10d'">
+              <i class="fa-solid fa-cloud-rain"></i>
+            </div>
+            <div *ngIf="item.weather[0].icon === '10n'">
+              <i class="fa-solid fa-cloud-moon-rain"></i>
+            </div>
+            <span class="hora">{{item.dt_txt | date:'HH:mm'}}</span>
+            <span>{{item.main.temp| number: '1.0-0'}}°</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
