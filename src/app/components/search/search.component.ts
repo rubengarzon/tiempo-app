@@ -36,7 +36,7 @@ export class SearchComponent implements OnInit {
     this.inputSearch.valueChanges
       .pipe(
         map((search: string) => search.trim()),
-        debounceTime(850),
+        debounceTime(1100),
         distinctUntilChanged(),
         filter((search: string) => search !== ''),
         tap((search: string) => this.submitted.emit(search)),

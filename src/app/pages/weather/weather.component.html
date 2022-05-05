@@ -19,8 +19,6 @@
     <div class="card__main">
     </div>
     <div class="card__bloque">
-
-
       <div class="card__stats" *ngFor="let item of forecast.list;let indice=index">
         <div class="card__stat width-33" *ngIf="item.dt_txt > fechaActual && indice < 5">
           <div class="card__stat--stat">
